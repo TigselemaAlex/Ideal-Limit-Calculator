@@ -24,7 +24,7 @@ const calculateTotal = computed(()=>{
 
 const countWords = (): void => {
   wordToAnalise.value = words.value.replaceAll(' ', '');
-  GetLetters(words.value).then((result: Response) => {
+  GetLetters(words.value.replaceAll(' ', '')).then((result: Response) => {
     response.value = result;
     keys.value = Object.keys(result.words);
     letters.value = result.words;
